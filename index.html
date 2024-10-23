@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Encryption by Manuel Westermeier</title>
+    <style>
+        * {
+            font-family: Arial, sans-serif;
+            margin: 5px;
+            padding: 5px;
+            border-radius: none;
+        }
+
+        body {
+            margin: auto;
+            max-width: 450px;
+            min-height: calc(100dvh - 30px);
+            display: flex;
+            flex-direction: column;
+        }
+
+        fieldset {
+            margin: auto;
+        }
+    </style>
+    <script src="index.js" defer></script>
+</head>
+
+<body>
+    <h2>
+        Basic Encryption by Manuel Westermeier
+    </h2>
+    <fieldset>
+        <legend>
+            <h3>
+                Encrypt File
+            </h3>
+        </legend>
+        <p>
+            Encryption Password: <input type="text" value="password" placeholder="password...">
+        </p>
+        <p>
+            File to Encrypt: <input type="file" title="data">
+        </p>
+        <button>
+            Start Encryption
+        </button>
+    </fieldset>
+
+    <fieldset>
+        <legend>
+            <h3>
+                Decrypt File
+            </h3>
+        </legend>
+        <p>
+            Decryption Password: <input type="text" value="password" placeholder="password...">
+        </p>
+        <p>
+            File to Decrypt: <input type="file" title="data">
+        </p>
+        <button>
+            Start Decryption
+        </button>
+    </fieldset>
+</body>
+
+</html>
