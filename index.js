@@ -1,6 +1,8 @@
 const [startEncButton, startDecButton] = document.querySelectorAll("button");
-const [encPasswordInput, decPasswordInput] = document.querySelectorAll("input[type=text]");
-const [encFileInput, decFileInput] = document.querySelectorAll("input[type=file]");
+const [encPasswordInput, decPasswordInput] =
+  document.querySelectorAll("input[type=text]");
+const [encFileInput, decFileInput] =
+  document.querySelectorAll("input[type=file]");
 
 function toggleByteAlgorithm(value = 0, key = 0) {
   for (let index = 0; index < 8; index++) {
@@ -39,14 +41,24 @@ function processFile(fileInput, passwordInput, isEncryption) {
 
   const reader = new FileReader();
 
-  reader.onload = function(event) {
+  reader.onload = function (event) {
     const data = new Uint8Array(event.target.result);
-    const password = Uint8Array.from(passwordInput.value.split("").map(char => char.charCodeAt(0)));
+    const password = Uint8Array.from(
+      passwordInput.value.split("").map((char) => char.charCodeAt(0))
+    );
 
-    const processedData = isEncryption ? encryptData(data, password) : decryptData(data, password);
+    const processedData = isEncryption
+      ? encryptData(data, password)
+      : decryptData(data, password);
 
-    const blob = new Blob([processedData], { type: "application/octet-stream" });
-    const outputFileName = prompt("Enter the output file name:", isEncryption ? "encrypted_file.bin" : "decrypted_file.bin") || (isEncryption ? "encrypted_file.bin" : "decrypted_file.bin");
+    const blob = new Blob([processedData], {
+      type: "application/octet-stream",
+    });
+    const outputFileName =
+      prompt(
+        "Enter the output file name:",
+        isEncryption ? "encrypted_file.bin" : "decrypted_file.bin"
+      ) || (isEncryption ? "encrypted_file.bin" : "decrypted_file.bin");
 
     const downloadLink = document.createElement("a");
     downloadLink.href = URL.createObjectURL(blob);
