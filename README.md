@@ -31,15 +31,7 @@ if the password is to short => repeat it with the values of the encyrpted data b
 javascript implementation:
 
 ```js
-function encryptData(data, password) {
-  for (let i = 0; i < data.length; i++) {
-    data[i] = toggleByteAlgorithm(data[i], password[i % password.length]);
-  }
-
-  return data;
-}
-
-function decryptData(data, password) {
+function toggleEncryption(data, password) {
   for (let i = 0; i < data.length; i++) {
     data[i] = toggleByteAlgorithm(data[i], password[i % password.length]);
   }
